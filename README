@@ -1,0 +1,98 @@
+# README.md
+
+## FoodProductsApi
+
+API REST para gestionar productos de comida y categorías, desarrollada en ASP.NET Core 8.0 con arquitectura por capas (Domain, Application, Infrastructure, API) y Entity Framework Core con SQLite.
+
+---
+
+## 🚀 Características
+
+* CRUD completo para **FoodProduct** y **Category**
+* Arquitectura limpia por capas
+* Principios **SOLID** y validaciones en el dominio
+* Persistencia con **Entity Framework Core (SQLite)**
+* Documentación automática con **Swagger**
+
+---
+
+## 📋 Prerrequisitos
+
+* [.NET 8 SDK](https://dotnet.microsoft.com/download)
+* **dotnet-ef** (CLI de migraciones)
+* Git
+
+---
+
+## 🔧 Instalación y configuración
+
+1. Clonar el repositorio:
+
+   ```bash
+   git clone https://github.com/tuUsuario/FoodProductsApi.git
+   cd FoodProductsApi
+   ```
+
+2. Restaurar paquetes NuGet y referencias de proyecto:
+
+   ```bash
+   dotnet restore
+   ```
+
+3. Instalar la herramienta de migraciones (si es la primera vez):
+
+   ```bash
+   dotnet tool install --global dotnet-ef
+   ```
+
+4. Aplicar migraciones y crear la base de datos SQLite:
+
+   ```bash
+   dotnet ef database update \
+     --project FoodProducts.Infrastructure \
+     --startup-project FoodProducts.API
+   ```
+
+5. Ejecutar la API:
+
+   ```bash
+   cd FoodProducts.API
+   dotnet run
+   ```
+
+6. Acceder a Swagger UI en tu navegador:
+
+   ```
+   https://localhost:5001/swagger
+   ```
+
+---
+
+## 📂 Estructura de carpetas
+
+```plaintext
+FoodProductsApi/
+├── FoodProducts.Domain/
+├── FoodProducts.Application/
+├── FoodProducts.Infrastructure/
+└── FoodProducts.API/
+```
+
+Cada carpeta corresponde a una capa de la arquitectura:
+
+* **Domain**: Entidades, interfaces y excepciones de dominio.
+* **Application**: Servicios de lógica de negocio.
+* **Infrastructure**: Implementación de repositorios, DbContext y extensiones.
+* **API**: Controladores, configuración de dependencia e inicio de la aplicación.
+
+---
+
+## 🛠️ Uso
+
+Una vez en Swagger UI, prueba los siguientes endpoints:
+
+* `/api/Categories` → gestión de categorías
+* `/api/FoodProducts` → gestión de productos de comida
+
+
+

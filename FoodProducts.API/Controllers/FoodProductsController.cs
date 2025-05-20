@@ -55,7 +55,6 @@ namespace FoodProducts.API.Controllers
                 return NotFound();
 
             var updated = await _service.UpdateAsync(id, input);
-            // Para PUT 204 NoContent es correcto si no se retorna entidad actualizada
             return NoContent();
         }
 

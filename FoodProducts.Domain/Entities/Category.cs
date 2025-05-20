@@ -8,7 +8,6 @@ namespace FoodProducts.Domain.Entities
         public string Name { get; private set; } = string.Empty;
         public ICollection<FoodProduct> FoodProducts { get; private set; } = new List<FoodProduct>();
 
-        // Constructor público para el dominio
         public Category(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
@@ -25,7 +24,6 @@ namespace FoodProducts.Domain.Entities
             Name = newName;
         }
 
-        // Constructor protegido para EF Core
         protected Category() { }
     }
 

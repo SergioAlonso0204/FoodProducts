@@ -60,7 +60,6 @@ namespace FoodProducts.Application.Services
         public async Task<bool> DeleteAsync(Guid id) =>
             await _productRepo.DeleteAsync(id);
 
-        // ✅ Método privado para mapear de entidad a DTO de respuesta
         private static FoodProductResponseDto MapToResponseDto(FoodProduct p)
         {
             return new FoodProductResponseDto

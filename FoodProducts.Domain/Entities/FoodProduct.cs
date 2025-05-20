@@ -31,9 +31,7 @@ namespace FoodProducts.Domain.Entities
             CategoryId = category.Id;
         }
 
-        protected FoodProduct() { } // Para EF Core
-
-        // Métodos para modificar estado (encapsulación)
+        protected FoodProduct() { }
 
         public void ChangeName(string name)
         {

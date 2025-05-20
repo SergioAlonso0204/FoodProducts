@@ -33,7 +33,6 @@ namespace FoodProducts.Application.Services
             var existing = await _categoryRepo.GetByIdAsync(dto.Id)
                 ?? throw new DomainException("Categoría no encontrada.");
 
-            // Actualizamos la propiedad con método explícito en la entidad (recomendado)
             existing.ChangeName(dto.Name);
 
             return await _categoryRepo.UpdateAsync(existing);

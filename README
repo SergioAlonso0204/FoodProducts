@@ -1,98 +1,120 @@
-# README.md
+README.md
+🍽️ FoodProductsApi
 
-## FoodProductsApi
+API REST para gestionar productos y categorías, desarrollada en ASP.NET Core 8.0 con arquitectura por capas (Domain, Application, Infrastructure, API) y Entity Framework Core (SQLite).
 
-API REST para gestionar productos de comida y categorías, desarrollada en ASP.NET Core 8.0 con arquitectura por capas (Domain, Application, Infrastructure, API) y Entity Framework Core con SQLite.
+🚀 Características principales
 
----
+CRUD completo para FoodProduct y Category
 
-## 🚀 Características
+Arquitectura limpia por capas (Domain, Application, Infrastructure, API)
 
-* CRUD completo para **FoodProduct** y **Category**
-* Arquitectura limpia por capas
-* Principios **SOLID** y validaciones en el dominio
-* Persistencia con **Entity Framework Core (SQLite)**
-* Documentación automática con **Swagger**
+Aplicación de principios SOLID
 
----
+Validaciones dentro del dominio
 
-## 📋 Prerrequisitos
+Persistencia con Entity Framework Core (SQLite)
 
-* [.NET 8 SDK](https://dotnet.microsoft.com/download)
-* **dotnet-ef** (CLI de migraciones)
-* Git
+Documentación automática con Swagger
 
----
+📋 Prerrequisitos
 
-## 🔧 Instalación y configuración
+Antes de comenzar, asegúrate de tener instalado:
 
-1. Clonar el repositorio:
+.NET 8 SDK
 
-   ```bash
-   git clone https://github.com/tuUsuario/FoodProductsApi.git
-   cd FoodProductsApi
-   ```
+Herramienta CLI de migraciones: dotnet-ef
 
-2. Restaurar paquetes NuGet y referencias de proyecto:
+Git
 
-   ```bash
-   dotnet restore
-   ```
+🔧 Instalación y configuración
+1️⃣ Clonar el repositorio
+git clone https://github.com/tuUsuario/FoodProductsApi.git
+cd FoodProductsApi
 
-3. Instalar la herramienta de migraciones (si es la primera vez):
+2️⃣ Restaurar paquetes NuGet
+dotnet restore
 
-   ```bash
-   dotnet tool install --global dotnet-ef
-   ```
+3️⃣ Instalar la CLI de Entity Framework (si aún no está instalada)
+dotnet tool install --global dotnet-ef
 
-4. Aplicar migraciones y crear la base de datos SQLite:
+4️⃣ Aplicar migraciones y generar la base de datos
 
-   ```bash
-   dotnet ef database update \
-     --project FoodProducts.Infrastructure \
-     --startup-project FoodProducts.API
-   ```
+Asegúrate de ejecutar exactamente estos pasos para evitar conflictos entre versiones.
 
-5. Ejecutar la API:
+# 1. Navegar al directorio raíz del proyecto
+cd c:\Users\Sergio\Desktop\j\FoodProducts
 
-   ```bash
-   cd FoodProducts.API
-   dotnet run
-   ```
+# 2. Limpiar compilaciones previas
+dotnet clean
 
-6. Acceder a Swagger UI en tu navegador:
+# 3. Reconstruir solución
+dotnet build
 
-   ```
-   https://localhost:5001/swagger
-   ```
+# 4. Desinstalar cualquier versión incorrecta de EF CLI
+dotnet tool uninstall -g dotnet-ef
 
----
+# 5. Instalar la versión correcta (8.0.11 para .NET 8)
+dotnet tool install -g dotnet-ef --version 8.0.11
 
-## 📂 Estructura de carpetas
+# 6. Actualizar la base de datos (aplicar migraciones)
+dotnet ef database update --project .\Products.Infrastructure --startup-project .\Products.API
 
-```plaintext
+5️⃣ Ejecutar la API
+cd FoodProducts.API
+dotnet run
+
+6️⃣ Acceder a Swagger UI
+https://localhost:5001/swagger
+
+📂 Estructura del proyecto
 FoodProductsApi/
 ├── FoodProducts.Domain/
 ├── FoodProducts.Application/
 ├── FoodProducts.Infrastructure/
 └── FoodProducts.API/
-```
 
-Cada carpeta corresponde a una capa de la arquitectura:
+Descripción de cada capa
 
-* **Domain**: Entidades, interfaces y excepciones de dominio.
-* **Application**: Servicios de lógica de negocio.
-* **Infrastructure**: Implementación de repositorios, DbContext y extensiones.
-* **API**: Controladores, configuración de dependencia e inicio de la aplicación.
+Domain
+Entidades, reglas de negocio, interfaces de repositorio y excepciones de dominio.
 
----
+Application
+Casos de uso y servicios que orquestan la lógica de negocio.
 
-## 🛠️ Uso
+Infrastructure
+DbContext, implementaciones de repositorios, migraciones y acceso a datos.
 
-Una vez en Swagger UI, prueba los siguientes endpoints:
+API
+Controladores, configuración de dependencias, middleware y startup del proyecto.
 
-* `/api/Categories` → gestión de categorías
-* `/api/FoodProducts` → gestión de productos de comida
+🛠️ Endpoints disponibles
 
+En Swagger UI podrás probar:
 
+Categorías
 
+GET /api/Categories
+
+POST /api/Categories
+
+PUT /api/Categories/{id}
+
+DELETE /api/Categories/{id}
+
+Productos
+
+GET /api/FoodProducts
+
+POST /api/FoodProducts
+
+PUT /api/FoodProducts/{id}
+
+DELETE /api/FoodProducts/{id}
+
+Si quieres, también puedo:
+
+✅ Mejorar diseño visual del README
+✅ Agregar badges (build, .NET version, license, etc.)
+✅ Agregar imágenes o diagramas de arquitectura
+✅ Crear README tanto para backend como para frontend

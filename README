@@ -111,10 +111,3 @@ POST /api/FoodProducts
 PUT /api/FoodProducts/{id}
 
 DELETE /api/FoodProducts/{id}
-
-Si quieres, también puedo:
-
-✅ Mejorar diseño visual del README
-✅ Agregar badges (build, .NET version, license, etc.)
-✅ Agregar imágenes o diagramas de arquitectura
-✅ Crear README tanto para backend como para frontend
